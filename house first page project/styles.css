@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 10px;
+    background: rgba(175, 175, 175, 0.7);
+}
+
+body {
+    padding: 0.2rem 0.5rem;
+}
+
+.banner {
+    height: 95vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(14, 12, 12, 0.75), rgba(0, 0, 0, 0.75)), url(https://images.pexels.com/photos/1648771/pexels-photo-1648771.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(0 0, 100% 0%, 100% 94%, 0% 100%);
+}
+
+.navbar {
+    width: 85%;
+    margin: auto;
+    padding: 3.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar__logo {
+    display: inline-flexbox;
+    height: 12rem;
+    width: 15rem;
+    cursor: pointer;
+    opacity: 0.4;
+}
+
+.navbar ul li {
+    font-size: 1.6rem;
+    font-weight: 300;
+    list-style: none;
+    display: inline-flex;
+    margin: 0 2rem;
+    position: relative;
+}
+
+@media(max-width:768px) {
+    .navbar__logo {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .navbar ul {
+        margin-top: 190px;
+        padding-right: 800px;
+        justify-content: left;
+        flex-direction: column;
+    }
+    .navbar li {
+        margin-top: 1.5rem;
+    }
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+}
+
+.navbar ul li::after {
+    content: "";
+    width: 0;
+    height: 0.3rem;
+    background: #009688;
+    position: absolute;
+    left: 0%;
+    bottom: -1rem;
+    transition: 0.3s all;
+}
+
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+.content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    align-items: center;
+    color: #fff;
+}
+
+.content h1 {
+    font-size: 7rem;
+    margin-top: 8rem;
+}
+
+.content p {
+    margin: 2rem 0;
+    font-size: 1.6rem;
+    font-weight: 100;
+    line-height: 2.5rem;
+}
+
+button {
+    width: 20rem;
+    padding: 2rem 0;
+    margin: 2rem 1rem;
+    border-radius: 2.5rem;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+span {
+    background: #009688;
+    height: 100%;
+    width: 0;
+    border-radius: 2.5rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.4s all;
+}
+
+button:hover span {
+    width: 100%;
+}
+
+button:hover {
+    border: none;
+}
